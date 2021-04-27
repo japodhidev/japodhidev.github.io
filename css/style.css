@@ -22,13 +22,13 @@
 
 @font-face {
 	font-family: 'Work Sans';
-	src: url("/fonts/WorkSans-Regular.ttf") format('truetype');
+	src: url("/fonts/work-sans/WorkSans-Regular.ttf") format('truetype');
 	font-weight: 400;
 }
 
 @font-face {
 	font-family: 'Work Sans Italic';
-	src: url("/fonts/WorkSans-Italic.ttf") format('truetype');
+	src: url("/fonts/work-sans/WorkSans-Italic.ttf") format('truetype');
 	font-weight: 400;
 }
 
