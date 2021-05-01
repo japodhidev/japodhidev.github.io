@@ -349,4 +349,13 @@ nav#nav ul.navbar-nav li.nav-item a.nav-link:hover {
 	.post-header {
 		text-align: left;
 	}
+
+	#footer {
+		flex-direction: column;
+		width: 70%;
+	}
+
+	#footer p {
+		font-size: 0.9rem;
+	}
 }
