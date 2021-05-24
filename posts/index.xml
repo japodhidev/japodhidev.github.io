@@ -5,7 +5,6 @@
     <link>http://example.org/posts/</link>
     <description>Recent content in Posts on Japodhi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 26 Jan 2020 23:11:13 +0000</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
@@ -13,7 +12,7 @@
       <pubDate>Sun, 26 Jan 2020 23:11:13 +0000</pubDate>
       
       <guid>http://example.org/posts/my-first-post/</guid>
-      <description>&lt;p&gt;Hello and welcome.&lt;/p&gt;</description>
+      <description>&lt;h5 id=&#34;hello-world&#34;&gt;Hello, world!&lt;/h5&gt;</description>
     </item>
     
   </channel>
