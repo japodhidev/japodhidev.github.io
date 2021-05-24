@@ -24,5 +24,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>android</title>
+      <link>http://example.org/tags/android/</link>
+      <pubDate>Wed, 19 May 2021 12:46:15 +0300</pubDate>
+      
+      <guid>http://example.org/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>http://example.org/tags/java/</link>
+      <pubDate>Wed, 19 May 2021 12:46:15 +0300</pubDate>
+      
+      <guid>http://example.org/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reverse engineering</title>
+      <link>http://example.org/tags/reverse-engineering/</link>
+      <pubDate>Wed, 19 May 2021 12:46:15 +0300</pubDate>
+      
+      <guid>http://example.org/tags/reverse-engineering/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -14,13 +14,25 @@
     <loc>http://example.org/tags/welcome/</loc>
     <lastmod>2021-05-24T20:24:56+03:00</lastmod>
   </url><url>
+    <loc>http://example.org/tags/android/</loc>
+    <lastmod>2021-05-19T12:46:15+03:00</lastmod>
+  </url><url>
+    <loc>http://example.org/tags/java/</loc>
+    <lastmod>2021-05-19T12:46:15+03:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2021-05-19T12:46:15+03:00</lastmod>
+  </url><url>
+    <loc>http://example.org/tags/reverse-engineering/</loc>
+    <lastmod>2021-05-19T12:46:15+03:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/reverse-engineering-an-apk/</loc>
+    <lastmod>2021-05-19T12:46:15+03:00</lastmod>
+  </url><url>
     <loc>http://example.org/</loc>
     <lastmod>2020-01-26T23:11:13+00:00</lastmod>
   </url><url>
     <loc>http://example.org/posts/my-first-post/</loc>
-    <lastmod>2020-01-26T23:11:13+00:00</lastmod>
-  </url><url>
-    <loc>http://example.org/posts/</loc>
     <lastmod>2020-01-26T23:11:13+00:00</lastmod>
   </url><url>
     <loc>http://example.org/categories/</loc>
