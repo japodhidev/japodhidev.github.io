@@ -109,6 +109,7 @@
 </script>
 
 <script >
+	$('.buttons').css('width', 'max-content');
 	$('#socials').css('display', 'none');
 	$('.bottom-menu').css('display', 'none');
 
@@ -119,6 +120,15 @@
 	})
 
 	$('.bottom-menu').on('click', function () {
+		
+		let btnWidth = $('.buttons').css("width");
+		console.log(btnWidth);
+		if (btnWidth == 'max-content') {
+			$('.buttons').css('width', '260px');
+		} else if (btnWidth == '260px') {
+			$('.buttons').css('width', 'max-content');
+		}
+
 		$('#socials').toggle("slow");
 	})
 
