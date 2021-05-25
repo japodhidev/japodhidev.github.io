@@ -97,6 +97,21 @@ Should you find the content offensive or inappropriate in any way please do let 
 <p>It&rsquo;s important to state that any opinions expressed on here are my own.
 I am <strong>NOT</strong> affiliated to any organisation/firm/company/institution that I may mention in the written contents of this blog.</p>
 	</div>
+	<div class="buttons">
+	<button class="bottom-menu">
+		<i data-feather="menu"></i>
+	</button>
+	<div id="socials">
+		<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fexample.org%2fabout%2f" data-bs-toggle="tooltip" title="Share on LinkedIn">
+			<i data-feather="linkedin"></i>
+		</a>
+		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<a href="#" class="top" data-bs-toggle="tooltip" title="Back to top">
+			<i data-feather="arrow-up"></i>
+		</a>
+	</div>
+</div>
 </div>
 
         </div><footer>
@@ -105,9 +120,31 @@ I am <strong>NOT</strong> affiliated to any organisation/firm/company/institutio
 		<p>2021</p>
 		<p>Powered by <a href="htttp://gohugo.io">Hugo</a></p>
 	</div>
-</footer><script src="/js/bootstrap.bundle.min.js"></script>
+</footer><script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/feather.min.js"></script>
 <script>
   feather.replace()
+</script>
+
+<script >
+	$('#socials').css('display', 'none');
+	$('.bottom-menu').css('display', 'none');
+
+	$( window ).on('scroll', function () {
+		if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+			$('.bottom-menu').css('display', 'block').fadeIn("slow");
+		}
+	})
+
+	$('.bottom-menu').on('click', function () {
+		$('#socials').toggle("slow");
+	})
+
+	$('.top').on('click', function(event) {
+		event.preventDefault();
+		$(document).scrollTop(0);
+		$('#socials').toggle("slow")
+	});
 </script></body>
 </html>
