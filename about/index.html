@@ -11,7 +11,7 @@
 
 <div id="nav-wrapper" class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light" id="nav">
-        <a href="/" class="navbar-brand">Japodhi's Blog</a>
+        <a href="/" class="navbar-brand text-warning">Japodhi's Blog</a>
         <div class="menu">
             <ul class="navbar-nav">
                 
@@ -62,7 +62,8 @@
             </ul>
         </div>
     </nav>
-</div><body><div id="content" class="container-fluid">
+</div><body>
+        <div id="content" class="container-fluid">
 <div class="post">
 	<div class="post-header">
 		<h1>About</h1>
@@ -89,13 +90,13 @@
 </div>
 	<div class="post-content">
 		<h5 id="hello-and-welcome">Hello and welcome.</h5>
-<p>My name is Finch Ochieng (Japodhi). I&rsquo;m a computer programmer based in Nairobi, Kenya. I love being around computers and especially enjoy ordering them around.
+<p>My name is Finch Ochieng (Japodhi). I&rsquo;m a computer programmer from Kenya. I love being around computers and especially enjoy ordering them around.
 This here is my blog. My quiet little corner on the internet where I share my thoughts and experiences.</p>
 <p>I&rsquo;ll mainly be writing about my experiences in the fields of software development and computer science in general.
-The nature of the content found here is therefore supposed to be informative and hopefully educational.
+The nature of the content found here is meant to be exploratory. It&rsquo;s supposed to be informative and hopefully educational.
 Should you find the content offensive or inappropriate in any way please do let me know.</p>
 <p>It&rsquo;s important to state that any opinions expressed on here are my own.
-I am <strong>NOT</strong> affiliated to any organisation/firm/company/institution that I may mention in the written contents of this blog.</p>
+I am <strong>NOT</strong> affiliated to any organisation/firm/company/institution that may be mentioned in the written contents of this blog.</p>
 	</div>
 	<div class="buttons">
 	<button class="bottom-menu">
@@ -117,7 +118,7 @@ I am <strong>NOT</strong> affiliated to any organisation/firm/company/institutio
         </div><footer>
 	<div id="footer" class="mt-5 mb-2">
 		<p>&#9874; by <a href="https://twitter.com/japodhi_dev/">Japodhi</a></p>
-		<p>2021</p>
+		<p id="date">2021</p>
 		<p>Powered by <a href="htttp://gohugo.io">Hugo</a></p>
 	</div>
 </footer><script src="/js/jquery-3.6.0.min.js"></script>
@@ -156,5 +157,7 @@ I am <strong>NOT</strong> affiliated to any organisation/firm/company/institutio
 		$(document).scrollTop(0);
 		$('#socials').toggle("slow")
 	});
+	const dt = new Date()
+	$('#date').text(dt.getFullYear())
 </script></body>
 </html>

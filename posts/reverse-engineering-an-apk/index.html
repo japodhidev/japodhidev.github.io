@@ -11,7 +11,7 @@
 
 <div id="nav-wrapper" class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light" id="nav">
-        <a href="/" class="navbar-brand">Japodhi's Blog</a>
+        <a href="/" class="navbar-brand text-warning">Japodhi's Blog</a>
         <div class="menu">
             <ul class="navbar-nav">
                 
@@ -62,7 +62,8 @@
             </ul>
         </div>
     </nav>
-</div><body><div id="content" class="container-fluid">
+</div><body>
+        <div id="content" class="container-fluid">
 <div class="post">
 	<div class="post-header">
 		<h1>Reverse Engineering an Apk</h1>
@@ -167,16 +168,16 @@ I&rsquo;m not an Android developer.</p>
 <ul>
 <li>A quick and dirty method. Simply placing a return statement before any ad related code is executed so that the function/method returns without performing any task.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">requestNewInterstitial</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InterstitialAd<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span><span style="color:#f92672">.</span><span style="color:#a6e22e">setAdUnitId</span><span style="color:#f92672">(</span>getResources<span style="color:#f92672">().</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">string</span><span style="color:#f92672">.</span><span style="color:#a6e22e">interstitial_ad_unit_id</span><span style="color:#f92672">));</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span><span style="color:#f92672">.</span><span style="color:#a6e22e">loadAd</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AdRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">());</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">requestNewInterstitial</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// this.mInterstitialAd = new InterstitialAd(this);
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#f92672">...</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">requestNewInterstitial</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mInterstitialAd</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InterstitialAd(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mInterstitialAd</span>.<span style="color:#a6e22e">setAdUnitId</span>(getResources().<span style="color:#a6e22e">getString</span>(R.<span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">interstitial_ad_unit_id</span>));
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mInterstitialAd</span>.<span style="color:#a6e22e">loadAd</span>(<span style="color:#66d9ef">new</span> AdRequest.<span style="color:#a6e22e">Builder</span>().<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">requestNewInterstitial</span>() {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// this.mInterstitialAd = new InterstitialAd(this);</span>
+</span></span><span style="display:flex;"><span>   ...
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
 <li>
 <p>Ensuring null checks fail.</p>
@@ -184,11 +185,11 @@ I&rsquo;m not an Android developer.</p>
 <li>Another one of those easy fixes. Having a null check evaluate to true causes the code dependent on the null check not to be executed.
 Case in point, assigning a null value to the variable <code>this.mInterstitialAd</code>, ensures the if statement below will fail and as such any subsequent code will not be executed.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">goToNextLevel</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span><span style="color:#f92672">.</span><span style="color:#a6e22e">setAdListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AdListener<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">...</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">goToNextLevel</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mInterstitialAd</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mInterstitialAd</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">mInterstitialAd</span>.<span style="color:#a6e22e">setAdListener</span>(<span style="color:#66d9ef">new</span> AdListener() {
+</span></span><span style="display:flex;"><span>            ...
 </span></span></code></pre></div></li>
 <li>
 <p>Reversing comparison operators.</p>
@@ -197,19 +198,19 @@ Case in point, assigning a null value to the variable <code>this.mInterstitialAd
 The code below compares the value of a random integer between 0-100 against the value of the integer represented by the variable <code>R.string.app_code_number (2131820585)</code>. The comparison would always evaluate to true.
 By replacing the <code>&lt;</code> <em>less than</em> operator with the <code>&gt;</code> <em>greater than</em> operator, the check would fail, and the subsequent code would not be executed.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Random random <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>random<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>100<span style="color:#f92672">)</span> <span style="color:#f92672">&lt;</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>AdMainActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getResources</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">string</span><span style="color:#f92672">.</span><span style="color:#a6e22e">app_code_number</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>AdMainActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">v</span><span style="color:#f92672">.</span><span style="color:#a6e22e">isAdLoaded</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    AdMainActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">v</span><span style="color:#f92672">.</span><span style="color:#a6e22e">displayLoadedAd</span><span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    AdMainActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">v</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mInterstitialAd</span><span style="color:#f92672">.</span><span style="color:#a6e22e">setAdListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AdListener<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    Random random <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>random<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>100<span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>AdMainActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getResources</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">string</span><span style="color:#f92672">.</span><span style="color:#a6e22e">app_code_number</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">intValue</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// No execution. 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//if (AdMainActivity.this.v.isAdLoaded()) {
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//AdMainActivity.this.v.displayLoadedAd();
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//AdMainActivity.this.v.mInterstitialAd.setAdListener(new AdListener() {
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">...</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Random random <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (random.<span style="color:#a6e22e">nextInt</span>(100) <span style="color:#f92672">&lt;</span> Integer.<span style="color:#a6e22e">valueOf</span>(AdMainActivity.<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">getResources</span>().<span style="color:#a6e22e">getString</span>(R.<span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">app_code_number</span>)).<span style="color:#a6e22e">intValue</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (AdMainActivity.<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">isAdLoaded</span>()) {
+</span></span><span style="display:flex;"><span>    AdMainActivity.<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">displayLoadedAd</span>();
+</span></span><span style="display:flex;"><span>    AdMainActivity.<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">mInterstitialAd</span>.<span style="color:#a6e22e">setAdListener</span>(<span style="color:#66d9ef">new</span> AdListener() {
+</span></span><span style="display:flex;"><span>    ...
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    Random random <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (random.<span style="color:#a6e22e">nextInt</span>(100) <span style="color:#f92672">&gt;</span> Integer.<span style="color:#a6e22e">valueOf</span>(AdMainActivity.<span style="color:#a6e22e">this</span>.<span style="color:#a6e22e">getResources</span>().<span style="color:#a6e22e">getString</span>(R.<span style="color:#a6e22e">string</span>.<span style="color:#a6e22e">app_code_number</span>)).<span style="color:#a6e22e">intValue</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// No execution. </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//if (AdMainActivity.this.v.isAdLoaded()) {</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//AdMainActivity.this.v.displayLoadedAd();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//AdMainActivity.this.v.mInterstitialAd.setAdListener(new AdListener() {</span>
+</span></span><span style="display:flex;"><span>        ...
 </span></span></code></pre></div></li>
 <li>
 <p>Unloading/removing all code, layouts and views related to ads.</p>
@@ -221,8 +222,8 @@ Within the <em>res</em> folder lay an <code>XML</code> file that held the layout
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;com.google.android.gms.ads.AdView</span> <span style="color:#a6e22e">n1:id=</span><span style="color:#e6db74">&#34;@id/adView&#34;</span> <span style="color:#a6e22e">n1:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span> <span style="color:#a6e22e">n1:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span> <span style="color:#a6e22e">n3:adSize=</span><span style="color:#e6db74">&#34;MEDIUM_RECTANGLE&#34;</span> <span style="color:#a6e22e">n3:adUnitId=</span><span style="color:#e6db74">&#34;@string/banner_ad_unit_id&#34;</span> <span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/LinearLayout&gt;</span>
 </span></span></code></pre></div><p>Removing it would surely break that application, so I followed its usages to a <code>Java</code> class. I managed to find this reference to the layout above:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>LinearLayout<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout_adView</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> (LinearLayout) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">layout_adView</span>);
+</span></span><span style="display:flex;"><span>...
 </span></span></code></pre></div><p>For this method to work I had to find every such occurrence and either cleverly comment it out or remove it entirely.
 This proved to be even more difficult since I had to also search for and remove any additional code that depended on it.
 I soon realized that this method would require a lot of time and decided to go with the other options.</p>
@@ -255,7 +256,7 @@ I found reverse engineering (if I can call this that) both challenging and excit
         </div><footer>
 	<div id="footer" class="mt-5 mb-2">
 		<p>&#9874; by <a href="https://twitter.com/japodhi_dev/">Japodhi</a></p>
-		<p>2021</p>
+		<p id="date">2021</p>
 		<p>Powered by <a href="htttp://gohugo.io">Hugo</a></p>
 	</div>
 </footer><script src="/js/jquery-3.6.0.min.js"></script>
@@ -294,5 +295,7 @@ I found reverse engineering (if I can call this that) both challenging and excit
 		$(document).scrollTop(0);
 		$('#socials').toggle("slow")
 	});
+	const dt = new Date()
+	$('#date').text(dt.getFullYear())
 </script></body>
 </html>

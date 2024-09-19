@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.105.0">
+	<meta name="generator" content="Hugo 0.134.2">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 
 <div id="nav-wrapper" class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light" id="nav">
-        <a href="/" class="navbar-brand">Japodhi's Blog</a>
+        <a href="/" class="navbar-brand text-warning">Japodhi's Blog</a>
         <div class="menu">
             <ul class="navbar-nav">
                 
@@ -63,50 +63,51 @@
             </ul>
         </div>
     </nav>
-</div><body><div id="content" class="container-fluid">
-<div class="landing-wrapper">
-	<div class="landing-content">
-		<div class="landing-title">
-			<h1 class="title">Welcome,</h1>
-			<div class="landing-desc">Japodhi is writing computer programs.</div>
-			<div class="landing-links">
-				
-				
-					<a href="https://bitbucket.org/japodhidev/" data-bs-toggle="tooltip" title="Archive">
-						<i data-feather="archive"></i>
-					</a>
-				
-					<a href="https://github.com/japodhidev/" data-bs-toggle="tooltip" title="Github">
-						<i data-feather="github"></i>
-					</a>
-				
-					<a href="https://www.linkedin.com/in/finch-ochieng/" data-bs-toggle="tooltip" title="Linkedin">
-						<i data-feather="linkedin"></i>
-					</a>
-				
-					<a href="https://twitter.com/japodhi_dev/" data-bs-toggle="tooltip" title="Twitter">
-						<i data-feather="twitter"></i>
-					</a>
-				
-				
-			</div>
-			<div class="landing-btn">
-				<a href="/posts">
-					<i data-feather="log-in"></i>
-				</a>
-
-			</div>
+</div><body>
+        <div id="content" class="container-fluid">
+<div class="d-flex flex-column gap-5 mx-auto col-sm-11 col-md-7">
+	<div class="d-flex flex-column gap-5 text-center my-5">
+		<h1 style="font-size: 3.5rem; font-weight: 700;">Welcome,</h1>
+		<div>
+			<p class="lead">Japodhi is writing impactful computer programs.</p>
 		</div>
-		<div class="landing-message">
+		<div class="d-flex justify-content-center">
+			<a href="/posts" class="btn btn-outline-warning">
+				Read more
+				<i data-feather="log-in"></i>
+			</a>
+		</div>
+		<div class="d-flex flex-wrap justify-content-center gap-3 gap-md-5 mx-md-5 mt-md-5">
+			
+			
+				<a href="https://bitbucket.org/japodhidev/" data-bs-toggle="tooltip" title="Archive" class="px-3 py-2 border border-2 border-warning border-opacity-50 rounded rounded-5 link-success">
+					<i data-feather="archive"></i>
+				</a>
+			
+				<a href="https://github.com/japodhidev/" data-bs-toggle="tooltip" title="Github" class="px-3 py-2 border border-2 border-warning border-opacity-50 rounded rounded-5 link-success">
+					<i data-feather="github"></i>
+				</a>
+			
+				<a href="https://www.linkedin.com/in/finch-ochieng/" data-bs-toggle="tooltip" title="Linkedin" class="px-3 py-2 border border-2 border-warning border-opacity-50 rounded rounded-5 link-success">
+					<i data-feather="linkedin"></i>
+				</a>
+			
+				<a href="https://twitter.com/japodhi_dev/" data-bs-toggle="tooltip" title="Twitter" class="px-3 py-2 border border-2 border-warning border-opacity-50 rounded rounded-5 link-success">
+					<i data-feather="twitter"></i>
+				</a>
+			
 			
 		</div>
+	</div>
+	<div class="landing-message">
+		
 	</div>
 </div>
 
         </div><footer>
 	<div id="footer" class="mt-5 mb-2">
 		<p>&#9874; by <a href="https://twitter.com/japodhi_dev/">Japodhi</a></p>
-		<p>2021</p>
+		<p id="date">2021</p>
 		<p>Powered by <a href="htttp://gohugo.io">Hugo</a></p>
 	</div>
 </footer><script src="/js/jquery-3.6.0.min.js"></script>
@@ -145,5 +146,7 @@
 		$(document).scrollTop(0);
 		$('#socials').toggle("slow")
 	});
+	const dt = new Date()
+	$('#date').text(dt.getFullYear())
 </script></body>
 </html>

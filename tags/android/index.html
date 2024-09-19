@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="/css/style.css">
     
     
-    <title>Japodhi&#39;s Blog | android</title>
+    <title>Japodhi&#39;s Blog | Android</title>
 </head>
 
 <div id="nav-wrapper" class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light" id="nav">
-        <a href="/" class="navbar-brand">Japodhi's Blog</a>
+        <a href="/" class="navbar-brand text-warning">Japodhi's Blog</a>
         <div class="menu">
             <ul class="navbar-nav">
                 
@@ -62,9 +62,10 @@
             </ul>
         </div>
     </nav>
-</div><body><div id="content" class="container-fluid">
+</div><body>
+        <div id="content" class="container-fluid">
 <div class="title">
-	<h1>android</h1>
+	<h1>Android</h1>
 </div>
 
 <div class="post-list">
@@ -93,7 +94,7 @@
 	</div>
 </div>
     <div class="summary" href="/posts/reverse-engineering-an-apk/">
-        <p><h5 id="getting-rid-of-interstitial-ads-in-an-android-application">Getting rid of Interstitial ads in an Android application.</h5></p>
+        <p class="text-white"><h5 id="getting-rid-of-interstitial-ads-in-an-android-application">Getting rid of Interstitial ads in an Android application.</h5></p>
     </div>
 </div>
 
@@ -101,7 +102,7 @@
         </div><footer>
 	<div id="footer" class="mt-5 mb-2">
 		<p>&#9874; by <a href="https://twitter.com/japodhi_dev/">Japodhi</a></p>
-		<p>2021</p>
+		<p id="date">2021</p>
 		<p>Powered by <a href="htttp://gohugo.io">Hugo</a></p>
 	</div>
 </footer><script src="/js/jquery-3.6.0.min.js"></script>
@@ -140,5 +141,7 @@
 		$(document).scrollTop(0);
 		$('#socials').toggle("slow")
 	});
+	const dt = new Date()
+	$('#date').text(dt.getFullYear())
 </script></body>
 </html>
