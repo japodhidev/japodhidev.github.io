@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homepage on Japodhi&#39;s Blog</title>
+    <link>https://japodhidev.github.io/</link>
+    <description>Recent content in Homepage on Japodhi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Nov 2025 16:06:53 +0300</lastBuildDate>
+    <atom:link href="https://japodhidev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>https://japodhidev.github.io/cv/</link>
+      <pubDate>Sun, 23 Nov 2025 16:06:53 +0300</pubDate>
+      <guid>https://japodhidev.github.io/cv/</guid>
+      <description>&lt;h5 id=&#34;finch-ochieng-oliech&#34;&gt;FINCH OCHIENG OLIECH&lt;/h5&gt;&#xA;&lt;p&gt;Email: &lt;a href=&#34;mailto:finchochieng@outlook.com&#34;&gt;finchochieng@outlook.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Phone: 0704850175&lt;/p&gt;&#xA;&lt;p&gt;Nairobi, Kenya&lt;/p&gt;&#xA;&lt;h5 id=&#34;summary&#34;&gt;SUMMARY&lt;/h5&gt;&#xA;&lt;p&gt;Focused, highly competent software developer with 5+ years’ experience developing software for&#xA;different systems. Proven expertise developing API&amp;rsquo;s and web applications with an in-depth&#xA;understanding of the internet-based applications’ project life-cycle. Capable in all aspects of software&#xA;development from project planning to writing, testing and debugging code, creating documentation and&#xA;offering support.&lt;/p&gt;&#xA;&lt;h5 id=&#34;aspiration&#34;&gt;ASPIRATION&lt;/h5&gt;&#xA;&lt;p&gt;I am looking to grow as part of a team and eventually take on responsibility for larger projects. I am&#xA;currently seeking short-term or long-term contract positions which will allow me to further solidify my&#xA;software development skills.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HSL Color Picker</title>
+      <link>https://japodhidev.github.io/posts/hsl-color-picker/</link>
+      <pubDate>Wed, 09 Nov 2022 22:40:36 +0300</pubDate>
+      <guid>https://japodhidev.github.io/posts/hsl-color-picker/</guid>
+      <description>&lt;h5 id=&#34;hsla-colour-picker&#34;&gt;HSL/A Colour Picker&lt;/h5&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://japodhidev.github.io/about/</link>
+      <pubDate>Mon, 24 May 2021 20:24:56 +0300</pubDate>
+      <guid>https://japodhidev.github.io/about/</guid>
+      <description>&lt;h5 id=&#34;hello-and-welcome&#34;&gt;Hello and welcome.&lt;/h5&gt;</description>
+    </item>
+    <item>
+      <title>Reverse Engineering an Apk</title>
+      <link>https://japodhidev.github.io/posts/reverse-engineering-an-apk/</link>
+      <pubDate>Wed, 19 May 2021 12:46:15 +0300</pubDate>
+      <guid>https://japodhidev.github.io/posts/reverse-engineering-an-apk/</guid>
+      <description>&lt;h5 id=&#34;getting-rid-of-interstitial-ads-in-an-android-application&#34;&gt;Getting rid of Interstitial ads in an Android application.&lt;/h5&gt;</description>
+    </item>
+    <item>
+      <title>My First Post</title>
+      <link>https://japodhidev.github.io/posts/my-first-post/</link>
+      <pubDate>Sun, 26 Jan 2020 23:11:13 +0000</pubDate>
+      <guid>https://japodhidev.github.io/posts/my-first-post/</guid>
+      <description>&lt;h5 id=&#34;hello-world&#34;&gt;Hello, world!&lt;/h5&gt;</description>
+    </item>
+  </channel>
+</rss>
